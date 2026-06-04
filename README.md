@@ -66,10 +66,4 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ---
 
-## 실행 방법
-
-```bash
-./gradlew bootRun
-```
-
 서버 기본 포트: `http://localhost:8080`
