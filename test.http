@@ -1,0 +1,23 @@
+### DB 연결 테스트
+GET http://localhost:3000/api/db-test
+
+
+### 회원가입 테스트
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "userId": "applepie0911",
+  "password": "123445",
+  "name": "김민건"
+}
+
+
+### 로그인 테스트
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "userId": "test1",
+  "password": "1234"
+}
