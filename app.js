@@ -1,18 +1,22 @@
-// express 불러오기
 const express = require('express');
-// express 인스턴스 생성
-const app = express();
-// 포트 정보
-const port = 3000;
+require('dotenv').config();
 
-// 라우트 설정
-// HTTP GET 방식으로 '/' 경로를 요청하였을 때
-// Hello World!라는 문자열을 결과값으로 보냄
+const routes = require('./src/routes');
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// JSON 요청 body 읽기
+app.use(express.json());
+
+// 기본 라우트
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// 서버 실행
+// API 라우트 연결
+app.use('/api', routes);
+
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
   console.log(`http://localhost:${port}`);
